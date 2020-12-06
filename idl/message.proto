@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package message;
+
+service Message {
+    rpc query (MessageRequest) returns (MessageResponse) {
+    }
+
+    rpc event (EventRequest) returns (MessageResponse) {
+    }
+}
+
+message MessageRequest {
+    string pure = 1;
+    string msgType = 2;
+    string fromType = 3;
+    string md5 = 4;
+    string fromUser = 5;
+    string toUser = 6;
+    bool isAt = 7;
+}
+
+message EventRequest {
+    string event = 1;
+    string data = 2;
+}
+
+message MessageResponse {
+    string toUser = 1;
+    MessageBody body = 2;
+    bool multi = 3;
+}
+
+message MessageBody {
+    string text = 1;
+    string emoticonMd5 = 2;
+    string file = 3;
+    string filename = 4;
+}

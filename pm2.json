@@ -1,0 +1,19 @@
+{
+    "apps": [
+        {
+            "cwd": "~/code/node/qiurpc",
+            "env": {
+                "NODE_ENV": "production"
+            },
+            "exec_mode": "cluster_mode",
+            "instances": "max",
+            "name": "qiurpc",
+            "node_args": [
+                "--harmony",
+                "--max_old_space_size=500"
+            ],
+            "script": "./server.js",
+            "watch": false
+        }
+    ]
+}
